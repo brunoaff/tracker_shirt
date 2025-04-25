@@ -8,7 +8,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body class="dark">
-  <!-- Topbar para mobile -->
   <header class="topbar">
     <button id="menu-toggle">☰</button>
     <nav id="mobile-nav" class="hidden">
@@ -41,15 +40,12 @@
     </aside>
 
     <main class="main-content">
-      <!-- Conteúdo Principal -->
-      <div class="card" id="form-section">
-        <header class="card-header">
-          <h2>Adicionar Nova Camisola</h2>
-        </header>
+      <section class="card" id="form-section">
+        <h2>Adicionar Nova Camisola</h2>
         <form id="camisola-form">
           <div class="form-grid">
             <div class="field">
-              <label>Nome da Camisola*</label>
+              <label>Nome*</label>
               <input type="text" id="nome" required>
             </div>
             <div class="field">
@@ -72,7 +68,7 @@
               </select>
             </div>
             <div class="field">
-              <label>Estado de Conservação*</label>
+              <label>Estado*</label>
               <input type="text" id="estado" required>
             </div>
             <div class="field">
@@ -84,11 +80,9 @@
               <input type="file" id="imagem" accept="image/*">
             </div>
           </div>
+          <button class="btn-primary" type="submit">Adicionar Camisola</button>
         </form>
-        <footer class="card-actions">
-          <button class="btn-primary" type="submit" form="camisola-form">Adicionar</button>
-        </footer>
-      </div>
+      </section>
 
       <section id="filtros">
         <h2>Filtros</h2>
