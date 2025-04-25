@@ -1,0 +1,238 @@
+:root {
+    --bg-color: #1b1b1f;
+    --sidebar-bg: #111113;
+    --card-bg: #1e1e22;
+    --text-color: #e0e0e4;
+    --muted-color: #8a8a90;
+    --accent-color: #00ffc3;
+    --hover-accent: #00ddb0;
+    --border-radius: 12px;
+    --font: 'Inter', sans-serif;
+  }
+  
+  * {
+    box-sizing: border-box;
+    font-family: var(--font);
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    background: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    height: 100vh;
+  }
+  
+  .dashboard {
+    display: flex;
+    width: 100%;
+  }
+  
+  /* Sidebar */
+  .sidebar {
+    width: 260px;
+    background: var(--sidebar-bg);
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .profile {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--accent-color);
+  }
+  
+  .username {
+    margin-top: 0.5rem;
+    font-weight: 600;
+  }
+  
+  nav ul {
+    list-style: none;
+    margin: 2rem 0;
+  }
+  
+  nav li {
+    margin-bottom: 1.2rem;
+  }
+  
+  nav a {
+    color: var(--muted-color);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    padding: 0.6rem 1rem;
+    border-radius: var(--border-radius);
+    transition: background 0.3s, color 0.3s;
+  }
+  
+  nav li.active a,
+  nav a:hover {
+    background: var(--accent-color);
+    color: #000;
+  }
+  
+  nav .icon {
+    margin-right: 0.75rem;
+  }
+  
+  .brand {
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--muted-color);
+  }
+  
+  .brand .icon {
+    margin-right: 0.5rem;
+    color: var(--accent-color);
+  }
+  
+  /* Main Content */
+  .main-content {
+    flex: 1;
+    padding: 2rem;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .card {
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  }
+  
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.25rem;
+  }
+  
+  .card-header h2 {
+    font-size: 1.25rem;
+  }
+  
+  .form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem 2rem;
+  }
+  
+  .field {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .field.full {
+    grid-column: span 2;
+  }
+  
+  .field label {
+    margin-bottom: 0.5rem;
+    color: var(--muted-color);
+    font-size: 0.9rem;
+  }
+  
+  .field input[type="text"],
+  .field input[type="file"],
+  .field select {
+    background: var(--bg-color);
+    border: 1px solid #333;
+    border-radius: var(--border-radius);
+    color: var(--text-color);
+    padding: 0.6rem 0.8rem;
+    font-size: 1rem;
+  }
+  
+  .field.full input[type="file"] {
+    padding: 0.4rem;
+  }
+  
+  .card-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+  
+  .btn-primary {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: var(--border-radius);
+    background: var(--accent-color);
+    color: #000;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .btn-primary:hover {
+    background: var(--hover-accent);
+  }
+  
+  /* Filtros, Estatísticas e Galeria */
+  #filtros input {
+    width: 100%;
+    max-width: 900px;
+    padding: 0.75rem 1rem;
+    margin: 0.5rem 0;
+    background: var(--card-bg);
+    border: 1px solid #333;
+    border-radius: var(--border-radius);
+    color: var(--text-color);
+  }
+  
+  #estatisticas, #galeria {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  #camisolas-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .camisola-card {
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+    transition: transform 0.3s ease;
+  }
+  
+  .camisola-card:hover {
+    transform: scale(1.03);
+  }
+  
+  .camisola-card img {
+    width: 100%;
+    border-radius: var(--border-radius);
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Fade-in */
+  .fade-in {
+    animation: fadeIn 0.4s ease-in-out;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  
