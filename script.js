@@ -1,11 +1,9 @@
-// Controle de Menu Mobile
 const menuToggle = document.getElementById('menu-toggle');
 const mobileNav = document.getElementById('mobile-nav');
 menuToggle.addEventListener('click', () => {
   mobileNav.classList.toggle('active');
 });
 
-// Código das camisolas
 let camisolas = JSON.parse(localStorage.getItem('camisolas')) || [];
 
 function salvarLocalStorage() {
