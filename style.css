@@ -37,6 +37,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    transition: transform 0.3s ease;
   }
   
   .profile {
@@ -234,5 +235,47 @@
   @keyframes fadeIn {
     from { opacity: 0; transform: translateY(10px); }
     to   { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* Responsive */
+  @media (max-width: 1024px) {
+    .sidebar {
+      transform: translateX(-100%);
+      position: absolute;
+      z-index: 100;
+    }
+    .dashboard:hover .sidebar {
+      transform: translateX(0);
+    }
+    .main-content {
+      padding: 1rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .form-grid {
+      grid-template-columns: 1fr;
+    }
+    #camisolas-container {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .card {
+      padding: 1rem;
+      margin: 0.5rem;
+    }
+    #camisolas-container {
+      grid-template-columns: 1fr;
+    }
+    nav ul {
+      display: flex;
+      justify-content: space-around;
+    }
+    nav a {
+      padding: 0.5rem;
+      font-size: 0.9rem;
+    }
   }
   
