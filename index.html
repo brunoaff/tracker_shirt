@@ -1,112 +1,63 @@
+
 <!DOCTYPE html>
 <html lang="pt-PT">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tracking Camisolas</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tracking Camisolas</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://unpkg.com/feather-icons" rel="stylesheet">
 </head>
 <body>
-  <header class="topbar">
-    <button id="menu-toggle">☰</button>
-    <h1>Tracking Camisolas</h1>
-    <nav id="mobile-nav" class="hidden">
-      <ul>
-        <li><a href="#form-section">➕ Adicionar</a></li>
-        <li><a href="#galeria">🏠 Coleção</a></li>
-        <li><a href="#estatisticas">📊 Estatísticas</a></li>
-        <li><a href="#definicoes">⚙️ Definições</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <div class="dashboard">
     <aside class="sidebar">
-      <div class="profile">
-        <img src="avatar.jpg" alt="Avatar" class="avatar">
-        <p class="username">Colecionista</p>
-      </div>
-      <nav>
-        <ul>
-          <li><a href="#form-section">➕ Adicionar</a></li>
-          <li><a href="#galeria">🏠 Coleção</a></li>
-          <li><a href="#estatisticas">📊 Estatísticas</a></li>
-          <li><a href="#definicoes">⚙️ Definições</a></li>
-        </ul>
-      </nav>
+        <div class="sidebar-top">
+            <h2>👕</h2>
+        </div>
+        <nav class="nav">
+            <a href="#adicionar"><i data-feather="plus-circle"></i><span>Adicionar</span></a>
+            <a href="#galeria"><i data-feather="home"></i><span>Coleção</span></a>
+            <a href="#estatisticas"><i data-feather="bar-chart-2"></i><span>Estatísticas</span></a>
+            <a href="#definicoes"><i data-feather="settings"></i><span>Definições</span></a>
+        </nav>
     </aside>
 
-    <main class="main-content">
-      <section class="card" id="form-section">
-        <h2>Adicionar Nova Camisola</h2>
-        <form id="camisola-form">
-          <div class="form-grid">
-            <div class="field">
-              <label>Nome*</label>
-              <input type="text" id="nome" placeholder="Nome da camisola" required>
-            </div>
-            <div class="field">
-              <label>Clube/Seleção*</label>
-              <input type="text" id="clube" placeholder="Nome do clube ou seleção" required>
-            </div>
-            <div class="field">
-              <label>Época*</label>
-              <input type="text" id="epoca" placeholder="Ano da época" required>
-            </div>
-            <div class="field">
-              <label>Jogador*</label>
-              <input type="text" id="jogador" placeholder="Nome do jogador" required>
-            </div>
-            <div class="field">
-              <label>Tamanho*</label>
-              <select id="tamanho" required>
-                <option value="" disabled selected>Selecionar tamanho</option>
-                <option>XS</option><option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option>
-              </select>
-            </div>
-            <div class="field">
-              <label>Estado*</label>
-              <input type="text" id="estado" placeholder="Novo, usado..." required>
-            </div>
-            <div class="field">
-              <label>Origem*</label>
-              <input type="text" id="origem" placeholder="Fonte da compra" required>
-            </div>
-            <div class="field full">
-              <label>Imagem</label>
-              <input type="file" id="imagem" accept="image/*">
-            </div>
-          </div>
-          <button class="btn-primary" type="submit">Adicionar</button>
-        </form>
-      </section>
+    <div class="main">
+        <header class="topbar">
+            <button id="menu-toggle"><i data-feather="menu"></i></button>
+            <h1>Tracking Camisolas</h1>
+        </header>
 
-      <section id="filtros" class="card">
-        <h2>Filtros</h2>
-        <input type="text" id="filtro-clube" placeholder="Filtrar por Clube">
-        <input type="text" id="filtro-jogador" placeholder="Filtrar por Jogador">
-        <input type="text" id="filtro-epoca" placeholder="Filtrar por Época">
-      </section>
+        <main class="content">
+            <section id="adicionar" class="card">
+                <h2>Adicionar Camisola</h2>
+                <form id="camisola-form">
+                    <input type="text" id="nome" placeholder="Nome" required>
+                    <input type="text" id="clube" placeholder="Clube/Seleção" required>
+                    <input type="text" id="jogador" placeholder="Jogador" required>
+                    <input type="text" id="epoca" placeholder="Época" required>
+                    <input type="file" id="imagem" accept="image/*">
+                    <button type="submit" class="btn">Adicionar</button>
+                </form>
+            </section>
 
-      <section id="estatisticas" class="card">
-        <h2>Estatísticas</h2>
-        <p id="contador">Total de Camisolas: 0</p>
-        <div id="estatisticas-clubes"></div>
-      </section>
+            <section id="galeria" class="card">
+                <h2>Galeria</h2>
+                <div id="camisolas-container"></div>
+            </section>
 
-      <section id="galeria" class="card">
-        <h2>Galeria</h2>
-        <div id="camisolas-container"></div>
-      </section>
+            <section id="estatisticas" class="card">
+                <h2>Estatísticas</h2>
+                <p id="contador">Total de Camisolas: 0</p>
+            </section>
 
-      <section id="definicoes" class="card">
-        <h2>Definições</h2>
-        <p>Preferências do utilizador ainda em desenvolvimento.</p>
-      </section>
-    </main>
-  </div>
+            <section id="definicoes" class="card">
+                <h2>Definições</h2>
+                <p>Preferências do utilizador.</p>
+            </section>
+        </main>
+    </div>
 
-  <script src="script.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="script.js"></script>
 </body>
 </html>
