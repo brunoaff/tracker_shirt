@@ -3,13 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tracking Camisolas de Futebol</title>
+  <title>Tracking Camisolas</title>
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
-<body class="dark">
+<body>
   <header class="topbar">
     <button id="menu-toggle">☰</button>
+    <h1>Tracking Camisolas</h1>
     <nav id="mobile-nav" class="hidden">
       <ul>
         <li><a href="#form-section">➕ Adicionar</a></li>
@@ -23,7 +24,7 @@
   <div class="dashboard">
     <aside class="sidebar">
       <div class="profile">
-        <img src="avatar.jpg" alt="Usuário" class="avatar">
+        <img src="avatar.jpg" alt="Avatar" class="avatar">
         <p class="username">Colecionista</p>
       </div>
       <nav>
@@ -34,9 +35,6 @@
           <li><a href="#definicoes">⚙️ Definições</a></li>
         </ul>
       </nav>
-      <div class="brand">
-        <span class="icon">👕</span>Tracking Camisolas
-      </div>
     </aside>
 
     <main class="main-content">
@@ -46,65 +44,65 @@
           <div class="form-grid">
             <div class="field">
               <label>Nome*</label>
-              <input type="text" id="nome" required>
+              <input type="text" id="nome" placeholder="Nome da camisola" required>
             </div>
             <div class="field">
               <label>Clube/Seleção*</label>
-              <input type="text" id="clube" required>
+              <input type="text" id="clube" placeholder="Nome do clube ou seleção" required>
             </div>
             <div class="field">
               <label>Época*</label>
-              <input type="text" id="epoca" required>
+              <input type="text" id="epoca" placeholder="Ano da época" required>
             </div>
             <div class="field">
               <label>Jogador*</label>
-              <input type="text" id="jogador" required>
+              <input type="text" id="jogador" placeholder="Nome do jogador" required>
             </div>
             <div class="field">
               <label>Tamanho*</label>
               <select id="tamanho" required>
-                <option value="" disabled selected>Selecionar</option>
+                <option value="" disabled selected>Selecionar tamanho</option>
                 <option>XS</option><option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option>
               </select>
             </div>
             <div class="field">
               <label>Estado*</label>
-              <input type="text" id="estado" required>
+              <input type="text" id="estado" placeholder="Novo, usado..." required>
             </div>
             <div class="field">
               <label>Origem*</label>
-              <input type="text" id="origem" required>
+              <input type="text" id="origem" placeholder="Fonte da compra" required>
             </div>
             <div class="field full">
               <label>Imagem</label>
               <input type="file" id="imagem" accept="image/*">
             </div>
           </div>
-          <button class="btn-primary" type="submit">Adicionar Camisola</button>
+          <button class="btn-primary" type="submit">Adicionar</button>
         </form>
       </section>
 
-      <section id="filtros">
+      <section id="filtros" class="card">
         <h2>Filtros</h2>
         <input type="text" id="filtro-clube" placeholder="Filtrar por Clube">
         <input type="text" id="filtro-jogador" placeholder="Filtrar por Jogador">
         <input type="text" id="filtro-epoca" placeholder="Filtrar por Época">
       </section>
 
-      <section id="estatisticas">
+      <section id="estatisticas" class="card">
         <h2>Estatísticas</h2>
         <p id="contador">Total de Camisolas: 0</p>
         <div id="estatisticas-clubes"></div>
       </section>
 
-      <section id="galeria">
+      <section id="galeria" class="card">
         <h2>Galeria</h2>
         <div id="camisolas-container"></div>
       </section>
 
-      <section id="definicoes">
+      <section id="definicoes" class="card">
         <h2>Definições</h2>
-        <p>Preferências do utilizador.</p>
+        <p>Preferências do utilizador ainda em desenvolvimento.</p>
       </section>
     </main>
   </div>

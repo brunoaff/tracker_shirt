@@ -41,8 +41,8 @@ function renderizarCamisolas() {
       <h3>${camisola.nome}</h3>
       <p><strong>${camisola.clube}</strong></p>
       <p>${camisola.epoca} - ${camisola.jogador}</p>
-      <button onclick="editarCamisola(${index})">Editar</button>
-      <button onclick="removerCamisola(${index})">Remover</button>
+      <button onclick="editarCamisola(${index})" class="btn-primary">Editar</button>
+      <button onclick="removerCamisola(${index})" class="btn-primary">Remover</button>
     `;
     container.appendChild(card);
   });
@@ -95,7 +95,7 @@ form.addEventListener('submit', function(e) {
 });
 
 function removerCamisola(index) {
-  if (confirm('Tem a certeza?')) {
+  if (confirm('Tem a certeza que quer remover?')) {
     camisolas.splice(index, 1);
     salvarLocalStorage();
     renderizarCamisolas();
@@ -111,7 +111,6 @@ function editarCamisola(index) {
   document.getElementById('tamanho').value = camisola.tamanho;
   document.getElementById('estado').value = camisola.estado;
   document.getElementById('origem').value = camisola.origem;
-
   camisolas.splice(index, 1);
   salvarLocalStorage();
   renderizarCamisolas();
