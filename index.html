@@ -9,8 +9,9 @@
 </head>
 <body class="dark">
   <!-- Topbar para mobile -->
-  <header class="topbar mobile-only">
-    <nav>
+  <header class="topbar">
+    <button id="menu-toggle">☰</button>
+    <nav id="mobile-nav" class="hidden">
       <ul>
         <li><a href="#form-section">➕ Adicionar</a></li>
         <li><a href="#galeria">🏠 Coleção</a></li>
@@ -21,7 +22,6 @@
   </header>
 
   <div class="dashboard">
-    <!-- Sidebar inspirado no modelo -->
     <aside class="sidebar">
       <div class="profile">
         <img src="avatar.jpg" alt="Usuário" class="avatar">
@@ -29,20 +29,19 @@
       </div>
       <nav>
         <ul>
-          <li><span class="icon">➕</span><a href="#form-section">Adicionar</a></li>
-          <li><span class="icon">🏠</span><a href="#galeria">Coleção</a></li>
-          <li><span class="icon">📊</span><a href="#estatisticas">Estatísticas</a></li>
-          <li><span class="icon">⚙️</span><a href="#definicoes">Definições</a></li>
+          <li><a href="#form-section">➕ Adicionar</a></li>
+          <li><a href="#galeria">🏠 Coleção</a></li>
+          <li><a href="#estatisticas">📊 Estatísticas</a></li>
+          <li><a href="#definicoes">⚙️ Definições</a></li>
         </ul>
       </nav>
       <div class="brand">
-        <span class="icon">👕</span><span class="brand-text">Tracking Camisolas</span>
+        <span class="icon">👕</span>Tracking Camisolas
       </div>
     </aside>
-    
-    <!-- Main Content -->
+
     <main class="main-content">
-      <!-- Form Card -->
+      <!-- Conteúdo Principal -->
       <div class="card" id="form-section">
         <header class="card-header">
           <h2>Adicionar Nova Camisola</h2>
@@ -51,42 +50,37 @@
           <div class="form-grid">
             <div class="field">
               <label>Nome da Camisola*</label>
-              <input type="text" id="nome" placeholder="Ex: Home 2024" required>
+              <input type="text" id="nome" required>
             </div>
             <div class="field">
               <label>Clube/Seleção*</label>
-              <input type="text" id="clube" placeholder="Ex: Portugal" required>
+              <input type="text" id="clube" required>
             </div>
             <div class="field">
               <label>Época*</label>
-              <input type="text" id="epoca" placeholder="Ex: 2023/2024" required>
+              <input type="text" id="epoca" required>
             </div>
             <div class="field">
               <label>Jogador*</label>
-              <input type="text" id="jogador" placeholder="Ex: Cristiano Ronaldo" required>
+              <input type="text" id="jogador" required>
             </div>
             <div class="field">
               <label>Tamanho*</label>
               <select id="tamanho" required>
                 <option value="" disabled selected>Selecionar</option>
-                <option value="XS">XS</option>
-                <option value="S">S</option>
-                <option value="M">M</option>
-                <option value="L">L</option>
-                <option value="XL">XL</option>
-                <option value="XXL">XXL</option>
+                <option>XS</option><option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option>
               </select>
             </div>
             <div class="field">
               <label>Estado de Conservação*</label>
-              <input type="text" id="estado" placeholder="Ex: Novo, Usado" required>
+              <input type="text" id="estado" required>
             </div>
             <div class="field">
               <label>Origem*</label>
-              <input type="text" id="origem" placeholder="Ex: Compra, Troca" required>
+              <input type="text" id="origem" required>
             </div>
             <div class="field full">
-              <label>Upload da Imagem</label>
+              <label>Imagem</label>
               <input type="file" id="imagem" accept="image/*">
             </div>
           </div>
@@ -96,31 +90,27 @@
         </footer>
       </div>
 
-      <!-- Filtros -->
       <section id="filtros">
-        <h2>Filtros de Pesquisa</h2>
-        <input type="text" id="filtro-clube" placeholder="Procurar por Clube">
-        <input type="text" id="filtro-jogador" placeholder="Procurar por Jogador">
-        <input type="text" id="filtro-epoca" placeholder="Procurar por Época">
+        <h2>Filtros</h2>
+        <input type="text" id="filtro-clube" placeholder="Filtrar por Clube">
+        <input type="text" id="filtro-jogador" placeholder="Filtrar por Jogador">
+        <input type="text" id="filtro-epoca" placeholder="Filtrar por Época">
       </section>
 
-      <!-- Estatísticas -->
       <section id="estatisticas">
         <h2>Estatísticas</h2>
         <p id="contador">Total de Camisolas: 0</p>
         <div id="estatisticas-clubes"></div>
       </section>
 
-      <!-- Galeria -->
       <section id="galeria">
-        <h2>Galeria de Camisolas</h2>
+        <h2>Galeria</h2>
         <div id="camisolas-container"></div>
       </section>
 
-      <!-- Definições Placeholder -->
       <section id="definicoes">
         <h2>Definições</h2>
-        <p>Aqui poderás ajustar preferências pessoais.</p>
+        <p>Preferências do utilizador.</p>
       </section>
     </main>
   </div>
